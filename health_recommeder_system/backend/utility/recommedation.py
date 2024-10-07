@@ -1,4 +1,4 @@
-def get_recommendations(activity_level):
+def recommend_activities(activity_level):
     if activity_level == 'Low':
         return [
             "Walk for at least 15-30 minutes each day.",
@@ -8,15 +8,24 @@ def get_recommendations(activity_level):
         ]
     elif activity_level == 'Moderate':
         return [
-            "Aim for 30-45 minutes of moderate activity, such as brisk walking or cycling.",
-            "Incorporate some strength training exercises twice a week.",
-            "Take frequent short walks or stretch breaks during the day.",
-            "Gradually increase your step goal to 8,000 steps."
+            "Incorporate 30-45 minutes of brisk walking, cycling, or swimming 3-4 times a week.",
+            "Add high-intensity intervals to your workouts.",
+            "Include strength training exercises twice a week.",
+            "Aim for 10,000 steps per day and 150 minutes of moderate activity weekly."
+        ]
+    elif activity_level == 'High':
+        return [
+            "Try more intense workouts like running, spinning, or HIIT.",
+            "Cross-train with yoga, strength training, and cardio.",
+            "Work out 4-5 times a week with a mix of moderate and vigorous activities.",
+            "Consider personalized plans like resistance training or targeted cardio."
+        ]
+    elif activity_level == 'Very High':
+        return [
+            "Include rest and recovery days to prevent burnout.",
+            "Try advanced training like plyometrics or endurance activities.",
+            "Track detailed performance metrics (e.g., heart rate, VO2 max).",
+            "Add flexibility exercises like yoga to prevent injuries and improve mobility."
         ]
     else:
-        return [
-            "Aim for at least 45-60 minutes of intense activity, like running or HIIT workouts.",
-            "Include a variety of strength training exercises for full-body fitness.",
-            "Set goals to challenge yourself, such as increasing reps or weights.",
-            "Consider adding flexibility exercises like yoga or Pilates."
-        ]
+        return ["Activity level not recognized. Please consult a health professional for personalized advice."]
