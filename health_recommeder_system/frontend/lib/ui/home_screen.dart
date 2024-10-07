@@ -37,16 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
       final result = await apiService.getRecommendations(
           distance, activeMinutes, calories);
       setState(() {
-        var activityLevelNum = result['activity_level'];
-        if (activityLevelNum == 1) {
-          activityLevel = "Low";
-        } else if (activityLevelNum == 2) {
-          activityLevel = "Moderate";
-        } else if (activityLevelNum == 3) {
-          activityLevel = "High";
-        } else if (activityLevelNum == 4) {
-          activityLevel = "Very High";
-        }
+        activityLevel = result['activity_level'][0];
         recommendations = List<String>.from(result['recommendations']);
       });
     } catch (e) {
